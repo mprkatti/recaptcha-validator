@@ -65,7 +65,7 @@ app.post('/qrcode', (req, res) => {
 
     let json_object = {
       status: 1,
-      description: 'Success',
+      description: 'Already Registered',
       qr_data: entry.qr_data
     };
 
@@ -80,7 +80,7 @@ app.post('/qrcode', (req, res) => {
   getQrCode(secret).then(qr_data => {
     let response_object = {
       status: 2,
-      description: 'Already Registered',
+      description: 'Success',
       qr_data
     };
     qrcodeDB.push({ name, secret, qr_data });
