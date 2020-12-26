@@ -69,7 +69,8 @@ app.post('/qrcode', (req, res) => {
       qr_data: entry.qr_data
     };
 
-    res.status(200).json({ "response": json_object });
+    res.json({ "response": json_object });
+    return;
 
   }
 
@@ -84,6 +85,8 @@ app.post('/qrcode', (req, res) => {
     };
     qrcodeDB.push({ name, secret, qr_data });
     res.json({ "response": response_object });
+  }).catch(err => {
+    console.log(err);
   });
 
 
