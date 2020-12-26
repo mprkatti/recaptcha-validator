@@ -40,6 +40,7 @@ app.post('/feedback', (req, res) => {
 
   axios.post(VERIFY_URL).then((response) => {
     console.log('reCaptcha response: ', response.data);
+
     res.status(200).json(response.data);
 
   }).catch((error) => {
